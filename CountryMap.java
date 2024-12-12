@@ -13,7 +13,7 @@ public class CountryMap {
 
     public void addCity(City city){
         citys.add(city);
-        System.out.println("City added: "+city.getCityName());
+        System.out.println("City added: "+city.getName());
     }
 
 }
