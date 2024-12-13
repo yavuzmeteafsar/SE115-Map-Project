@@ -1,18 +1,18 @@
 public class City {
-    private String name;
+    private String cityName;
 
     public City(String name) {
-        this.name = name;
+        this.cityName = name;
     }
 
     public String getName() {
-        return name;
+        return cityName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.cityName = name;
     }
     public void diplayCityName(){
-        System.out.println("Displaying city name:"+this.name);
+        System.out.println("Displaying city name:"+this.cityName);
     }
 }
