@@ -91,7 +91,7 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Error! Can't find the file. Please check the file's name and it's path.");
         } catch (Exception e) {
-            System.out.println("An unexpected error occurred.");
+            System.out.println("An unexpected error occurred");
         }
     }
 }
