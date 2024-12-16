@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.io.IOException;
@@ -82,16 +83,35 @@ public class Main {
 
             // sonuçları göstermek için
             if (fastestRoute.equals("No route found.") || fastestRoute.equals("Invalid city names.")) {
-                System.out.println(fastestRoute);
+                writeToFile(fastestRoute);
             } else {
-                System.out.println("Fastest Way: " + fastestRoute);
-                System.out.println("Total Time: " + totalTime + " min");
+                writeToFile("Fastest Way: " + fastestRoute + "\nTotal Time: " + totalTime + " min");
             }
 
         } catch (IOException e) {
-            System.out.println("Error! Can't find the file. Please check the file's name and it's path.");
+            writeErrorToFile("Error! Can't read the file.Please check the file name and its path.");
         } catch (Exception e) {
-            System.out.println("An unexpected error occurred.");
+            writeErrorToFile("An unexpected error occurred.");
+        }
+    }
+
+    // hata mesajlarını dosyaya yazmak için
+    public static void writeErrorToFile(String errorMessage) {
+        try (FileWriter writer = new FileWriter("outputerror_yavuzmete.txt")) {
+            writer.write(errorMessage + "\n");
+            System.out.println("Error written to outputerror_yavuzmete.txt");
+        } catch (IOException e) {
+            System.out.println("Failed to write errors to output file.");
+        }
+    }
+
+    // sonuçları dosyaya yazmak için
+    public static void writeToFile(String content) {
+        try (FileWriter writer = new FileWriter("output_yavuzmete.txt")) {
+            writer.write(content + "\n");
+            System.out.println("Results written to output_yavuzmete.txt");
+        } catch (IOException e) {
+            System.out.println("Failed to write results to output file.");
         }
     }
 }
