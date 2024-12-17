@@ -101,7 +101,7 @@ public class Main {
             writer.write(errorMessage + "\n");
             System.out.println("Error written to outputerror_yavuzmete.txt");
         } catch (IOException e) {
-            System.out.println("Failed to write errors to output file.");
+            System.out.println("Failed to write errors to output file");
         }
     }
 
